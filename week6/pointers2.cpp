@@ -1,5 +1,9 @@
 #include<iostream>
 using namespace std;
+
+void solve(int arr[]){ //pointer paas hua he.
+    cout<<"Size inside solve function "<<sizeof(arr)<<endl;
+}
 int main(){
     // int arr[10]={12,13,44, 15};
     // cout<<arr<<endl;
@@ -45,21 +49,46 @@ int main(){
     // cout<<sizeof(*p)<<endl; // p is pointer refer to integeger data so  *p is also a integer datatype
 
 
-    //character array
-    char ch[10]="Utkarsh";
-    char*c=ch;
-    cout<<ch<<endl;
-    cout<<&ch<<endl;//address of first location
-    cout<<ch[0]<<endl;
+    // //character array
+    // char ch[10]="Utkarsh";
+    // char*c=ch;
+    // cout<<ch<<endl;
+    // cout<<&ch<<endl;//address of first location
+    // cout<<ch[0]<<endl;
 
-    cout<<&c<<endl;
-    cout<<*c<<endl;
-    cout<<c<<endl;
+    // cout<<&c<<endl;
+    // cout<<*c<<endl;
+    // cout<<c<<endl;
+    
+
+    // char name[10]="Tagdebano";
+    // char* c =&name[0];
+
+    // cout<< name <<endl;
+    // cout<< &name <<endl;
+    // cout<< *(name+3)<<endl;
+    // cout<< c <<endl;
+    // cout<< &c <<endl;
+    // cout<< *(c+3)<<endl;
+    // cout<< c+2 <<endl;
+    // cout<< *c <<endl;
+    // cout<< c+8 <<endl;
+
+    // char ch='k';
+    // char *cptr=&ch;
+    // cout<<cptr<<endl;
+
+    // char name[10]="Utkarsh";
+    // cout<< name<<endl;
+
+    // char *c="Utkarsh";
+    // cout<<c<<endl;
+
+    int arr[10]={1,2,3,4};
+    cout<<"inside main function. "<< sizeof(arr)<<endl;
 
 
-
-
-
+ 
 
     return 0;
 }
