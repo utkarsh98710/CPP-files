@@ -67,32 +67,28 @@ using namespace std;
 // }
 
 // Q.3) max sum of non adjacent elements
-int solve(vector<int>& arr, int target) {
+void solve(vector<int>& arr,int i, int sum, int &maxi) {
   //base case
-  if(target == 0) {
-    return 0;
-  }
-  if(target < 0) {
-    return INT_MAX;
-  }
-
-  //let's solve 1 case
-  int mini = INT_MAX;
-  for(int i=0; i<arr.size(); i++) {
-    int ans = solve(arr, target - arr[i]);
-    if(ans != INT_MAX)
-    mini = min(mini, ans + 1);
+  if(i >= arr.size()) {
+    //maxi update;
+    maxi = max(sum, maxi);
+    return;
   }
 
-  return mini;
-
+  //include
+  solve(arr,i+2,sum+arr[i] ,maxi );
+  //exclude
+  solve(arr, i+1, sum, maxi);
 }
 
 int main() {
-  vector<int> arr{1,2};
-  int target = 5; 
+  vector<int> arr{1, 2, 3, 1, 3, 5, 8, 1, 9};
+  int sum = 0;
+  int maxi = INT_MIN;
+  int i = 0;
+  solve(arr,i, sum, maxi);
 
-  int ans = solve(arr, target);
-  cout << "Answer is: " << ans << endl;
+  cout << maxi << endl;
+
   return 0;
 }
